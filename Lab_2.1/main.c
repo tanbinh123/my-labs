@@ -25,10 +25,13 @@ int main() {
         int i = 0;
         int left = 0;
         int right = 6;
-        while((left <= right)&&(matrix[j][i] != x)) {
+        while(left <= right) {
             i = (left + right) / 2;
             if (matrix[j][i] > x) { left = i+1; }
-            if (matrix[j][i] < x) { right = i-1; }
+            else
+                if (matrix[j][i] < x) { right = i-1; }
+            else
+                break;
         }
         if(matrix[j][i] == x) {
             printf("'X' in %d row: yes;\n", j+1);

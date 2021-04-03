@@ -1,20 +1,20 @@
 #include <stdio.h>
 
-double recursionDown(int n, int i, double x, double tempF) {
-    double F = -1, sum = 0;
-    printf("%d. F = %lf tempF = %lf sum = %lf\n", n, F, tempF, sum);
+double sum = 0;
+double recursionMix(int n, int i, double x, double F) {
+    printf("%d. F = %lf sum = %lf\n", n, F, sum);
     if (n == 1) {
         F = 1;
-        sum = 1;
+        sum = F;
     } else if (n == i) {
-        tempF *= (-1 * x) / 2;
-        sum = tempF + recursionDown(n-1, i, x, tempF);
+        F *= (-1 * x) / 2;
+        sum = F + recursionMix(n-1, i, x, F);
     } else {
-        tempF *= (-1) * x * (2 * (2+i-n) - 3) / (2 * (2+i-n));
-        sum = tempF + recursionDown(n-1, i, x, tempF);
+        F *= (-1) * x * (2 * (2+i-n) - 3) / (2 * (2+i-n));
+        sum = F + recursionMix(n-1, i, x, F);
     }
-    printf("%d. F = %lf tempF = %lf sum = %lf\n", n, F, tempF, sum);
-    return F;
+    printf("%d. F = %lf sum = %lf\n", n, F, sum);
+    return sum;
 }
 
 int main() {
@@ -27,5 +27,5 @@ int main() {
     printf("Input N:");
     scanf("%d", &n);
     if (n < 1) return printf("Invalid number!");
-    recursionDown(n, n, x, 1);
+    recursionMix(n, n, x, 1);
 }

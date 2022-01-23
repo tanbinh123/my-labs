@@ -1,3 +1,0 @@
-C:\Users\Danil\source\repos\lab2\Debug\lab2.exe
-D:\OOP\Lab3\Debug\lab2.exe
-D:\study\OOP\Lab3\Debug\lab2.exe

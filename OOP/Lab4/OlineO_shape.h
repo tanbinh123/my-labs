@@ -1,0 +1,9 @@
+#pragma once
+#include "line_shape.h"
+#include "ellipse_shape.h"
+
+class OLineOShape : public LineShape, public EllipseShape {
+public:
+	void Show(HDC, bool isDash);
+	Shape* Copy();
+};

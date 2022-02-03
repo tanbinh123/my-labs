@@ -1,0 +1,9 @@
+Package: hello
+Version: 1.0 
+Section: unknown 
+Priority: optional 
+Depends: 
+Architecture: amd64 
+Essential: no 
+Maintainer: Pasha 
+Description: Print hello world
